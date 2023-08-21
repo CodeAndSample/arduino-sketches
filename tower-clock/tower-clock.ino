@@ -27,7 +27,7 @@ RTC_DS1307 rtc;
 #define ECHO_PIN 2
 #define TRIG_PIN 3
 #define MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
-#define OSCILLATIONS 7   // This should be normally 17280
+#define OSCILLATIONS 7   // This should be normally 17.280
 
 // NewPing sonar(TRIG_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 
