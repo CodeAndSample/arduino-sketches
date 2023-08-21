@@ -1,6 +1,6 @@
 {
-    "sketch": "tower-clock/tower-clock.ino",
-    "output": "build",
-    "board": "arduino:avr:uno",
-    "port": "/dev/tty.usbmodem2101"
+  "sketch": "tower-clock/tower-clock.ino",
+  "output": "build",
+  "board": "arduino:avr:uno",
+  "port": "/dev/tty.usbmodem2101"
 }

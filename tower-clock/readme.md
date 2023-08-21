@@ -1,4 +1,4 @@
-# Arduino and a bell tower watch
+# Ticking Precision: Managing a Church Clock with Arduino
 
 ## Objective
 
