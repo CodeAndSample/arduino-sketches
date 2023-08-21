@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -143.71,
+      "left": -340.62,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ds1307",
+      "id": "ds1307",
+      "top": 368.05,
+      "left": 217.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": 126.13,
+      "left": -47.09,
+      "attrs": { "distance": "199" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -220.99,
+      "left": -104.42,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -299.57,
+      "left": -100.18,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    ["uno:GND.2", "ds1307:GND", "black", ["v20", "*", "v0"]],
+    ["uno:5V", "ds1307:5V", "red", ["v0"]],
+    ["uno:A4", "ds1307:SDA", "green", ["v16", "h0", "*", "h-34"]],
+    ["uno:A5", "ds1307:SCL", "orange", ["v20", "*", "h-30"]],
+    ["uno:5V", "ultrasonic1:VCC", "red", ["v165.67", "h-136.37"]],
+    ["r1:1", "led1:A", "blue", []],
+    ["uno:13", "r1:2", "blue", ["v0"]],
+    ["led1:C", "uno:GND.1", "black", ["h-138.87", "v122.86"]],
+    ["uno:2", "ultrasonic1:ECHO", "green", ["v0"]],
+    ["ultrasonic1:GND", "uno:GND.3", "black", ["v32.64", "h163.79"]],
+    ["uno:3", "ultrasonic1:TRIG", "violet", ["v0"]]
+  ],
+  "dependencies": {}
+}

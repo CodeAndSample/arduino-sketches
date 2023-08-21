@@ -1,0 +1,102 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
+    "Include": "RTClib.h",
+    "Includepath": "/Users/Qui/Documents/Arduino/libraries/RTClib/src"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
+    "Include": "Adafruit_I2CDevice.h",
+    "Includepath": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
+    "Include": "Wire.h",
+    "Includepath": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTC_DS1307.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTC_DS3231.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTC_Micros.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTC_Millis.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTC_PCF8523.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTC_PCF8563.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/RTClib/src/RTClib.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO/Adafruit_BusIO_Register.cpp",
+    "Include": "SPI.h",
+    "Includepath": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/SPI/src"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO/Adafruit_BusIO_Register.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO/Adafruit_I2CDevice.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO/Adafruit_SPIDevice.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src/Wire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src/utility/twi.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/SPI/src/SPI.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

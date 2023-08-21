@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "../..,../..",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "",
+  "fqbn": "arduino:avr:uno",
+  "hardwareFolders": "/Users/Qui/Library/Arduino15/packages",
+  "otherLibrariesFolders": "/Users/Qui/Documents/Arduino/libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "/Users/Qui/Documents/Programmieren/8_Arduino/tower-clock"
+}
