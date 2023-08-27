@@ -1,3 +1,4 @@
+
 /* Ticking Precision: Managing a Church Clock with Arduino
 **
 ** This is a simple Arduino sketch that will manage a church clock.
@@ -19,27 +20,31 @@
 **
 */
 
-#include "RTClib.h"
+#include <RTClib.h> // 실시간시계 라이브러리
+#include <Wire.h>   // I2C통신 라이브러리
 // #include "NewPing.h"
 
+// #include <LiquidCrystal.h>
+
+// LiquidCrystal lcd(12, 11, 10, 9, 8, 7);
 RTC_DS1307 rtc;
 
 #define ECHO_PIN 2
 #define TRIG_PIN 3
+#define SERIAL_OPTION 0
 #define MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
-#define OSCILLATIONS 7   // This should be normally 17.280
+#define OSCILLATIONS 3   // This should be normally 17.280
+#define DELAY_TIME 1250  // Delay between each measurement in milliseconds 1250 = 1.25 seconds
 
-// NewPing sonar(TRIG_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
+int counter = 0;           // Counter to keep track of proximity detections
+int counter_six_hours = 0; // Counter to keep track of proximity detections
+int distanceThreshold = 5; // The threshold distance (in centimeters) to trigger a count. Adjust this as needed.
 
-int counter = 0;            // Counter to keep track of proximity detections
-int distanceThreshold = 10; // The threshold distance (in centimeters) to trigger a count. Adjust this as needed.
-
-DateTime beginning = rtc.now();
 void setup()
 {
-    beginning = rtc.now();
     // set up for real-time clock
     pinMode(LED_BUILTIN, OUTPUT);
+    pinMode(13, OUTPUT);
     pinMode(TRIG_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
 
@@ -70,10 +75,15 @@ void setup()
 
     // When time needs to be re-set on a previously configured device, the
     // following line sets the RTC to the date & time this sketch was compiled
-    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
     // This line sets the RTC with an explicit date & time, for example to set
     // January 21, 2014 at 3am you would call:
     // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+    Serial.println("RTC is running, let's set the time!");
+    rtc.begin();
+    // lcd.begin(16, 2);
+
+    // lcd.print("Hello World!");
 }
 
 float readDistanceCM()
@@ -93,8 +103,8 @@ void loop()
     // set time only as seconds counting from midnight
     DateTime now = rtc.now();
 
-    DateTime endNoon(now.year(), now.month(), now.day(), 12, 0, 0);
-    DateTime endMidnight(now.year(), now.month(), now.day(), 24, 0, 0);
+    DateTime endNoon(now.year(), now.month(), now.day(), 12, 00, 0);
+    DateTime endMidnight(now.year(), now.month(), now.day(), 24, 00, 0);
 
     // Full Timestamp of midnight and noon
     // Serial.println(String("DateTime::TIMESTAMP_TIME:\t") + endNoon.timestamp(DateTime::TIMESTAMP_FULL));
@@ -117,36 +127,55 @@ void loop()
     Serial.print("Measured distance: ");
     Serial.println(readDistanceCM());
 
+    // This is the original code from the proximity sensor example
+    // if (distance < 10)
+    // {
+    //     digitalWrite(LED_BUILTIN, HIGH);
+    //     digitalWrite(13, HIGH);
+    // }
+    // else
+    // {
+    //     digitalWrite(LED_BUILTIN, LOW);
+    //     digitalWrite(13, LOW);
+    // }
+
+    // delay(50);
+
     // If an object is detected closer than the threshold, increase the counter
     if (distance > 0 && distance < distanceThreshold)
     {
         // Increment the counter
         counter++;
 
+        Serial.println("It's close!");
+
         // Turn on the LED if the counter reaches the threshold
         if (counter >= OSCILLATIONS)
         {
-            digitalWrite(LED_BUILTIN, true);
+            digitalWrite(LED_BUILTIN, HIGH);
+            Serial.println("LED on");
+
             // Check if the time is 12:00:00 (either midnight or noon)
         }
         // Check if the difference between now and noon is positive, else use midnight as an orientation
         if (differenceInSecondsNoon > 0)
         {
             // Check if the difference between now and noon is less than 2 seconds
-            if (differenceInSecondsNoon < 2)
+            if (differenceInSecondsNoon < 3)
             {
                 // If the time is 12:00:00, reset the counter and turn off the LED. I. e. release the pendulum.
-                digitalWrite(LED_BUILTIN, false);
+                digitalWrite(LED_BUILTIN, LOW);
                 counter = 0; // Reset the counter if it reaches 17280
             }
         }
         else
         {
             // Check if the difference between now and midnight is less than 2 seconds
-            if (differenceInSecondsMidnight < 2)
+            if (differenceInSecondsMidnight > 0 && differenceInSecondsMidnight < 3)
             {
                 // If the time is 24:00:00, reset the counter and turn off the LED. I. e. release the pendulum.
-                digitalWrite(LED_BUILTIN, false);
+                digitalWrite(LED_BUILTIN, LOW);
+
                 counter = 0; // Reset the counter if it reaches 17280
             }
         }
@@ -160,6 +189,44 @@ void loop()
     Serial.print(distance);
     Serial.println("cm");
 
+    // Datetime
+    // if (SERIAL_OPTION)
+    // {
+    //     Serial.print(now.year());
+    //     Serial.print("/");
+    //     Serial.print(now.month());
+    //     Serial.print("/");
+    //     Serial.print(now.day());
+    //     Serial.print(" ");
+
+    //     Serial.print(now.hour());
+    //     Serial.print(":");
+    //     Serial.print(now.minute());
+    //     Serial.print(":");
+    //     Serial.print(now.second());
+    //     Serial.print("\n");
+    // }
+
+    // lcd.setCursor(0, 0);
+    // lcd.print("DATE: ");
+    // lcd.print(now.year());
+    // lcd.print("/");
+    // lcd.print(now.month());
+    // lcd.print("/");
+    // lcd.print(now.day());
+    // lcd.setCursor(0, 1);
+    // lcd.print("TIME: ");
+    // lcd.print(now.hour());
+    // lcd.print(":");
+    // lcd.print(now.minute());
+    // lcd.print(":");
+    // lcd.print(now.second());
+    // lcd.print("Hello World!");
+    // // set the cursor to column 0, line 1
+    // // (note: line 1 is the second row, since counting begins with 0):
+    // lcd.setCursor(0, 1);
+    // // print the number of seconds since reset:
+    // lcd.print(millis() / 1000);
     // Delay
-    delay(1000);
+    delay(DELAY_TIME);
 }

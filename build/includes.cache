@@ -10,22 +10,42 @@
     "Includepath": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard"
   },
   {
-    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
-    "Include": "RTClib.h",
-    "Includepath": "/Users/Qui/Documents/Arduino/libraries/RTClib/src"
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock-with-inductive-proximity-sensor.ino.cpp",
+    "Include": "LiquidCrystal_I2C.h",
+    "Includepath": "/Users/Qui/Documents/Arduino/libraries/LiquidCrystal_I2C"
   },
   {
-    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
-    "Include": "Adafruit_I2CDevice.h",
-    "Includepath": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO"
-  },
-  {
-    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock-with-inductive-proximity-sensor.ino.cpp",
     "Include": "Wire.h",
     "Includepath": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src"
   },
   {
-    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock.ino.cpp",
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock-with-inductive-proximity-sensor.ino.cpp",
+    "Include": "RTClib.h",
+    "Includepath": "/Users/Qui/Documents/Arduino/libraries/RTClib/src"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock-with-inductive-proximity-sensor.ino.cpp",
+    "Include": "Adafruit_I2CDevice.h",
+    "Includepath": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO"
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Programmieren/8_Arduino/build/sketch/tower-clock-with-inductive-proximity-sensor.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src/Wire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src/utility/twi.c",
     "Include": "",
     "Includepath": null
   },
@@ -81,16 +101,6 @@
   },
   {
     "Sourcefile": "/Users/Qui/Documents/Arduino/libraries/Adafruit_BusIO/Adafruit_SPIDevice.cpp",
-    "Include": "",
-    "Includepath": null
-  },
-  {
-    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src/Wire.cpp",
-    "Include": "",
-    "Includepath": null
-  },
-  {
-    "Sourcefile": "/Users/Qui/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/libraries/Wire/src/utility/twi.c",
     "Include": "",
     "Includepath": null
   },

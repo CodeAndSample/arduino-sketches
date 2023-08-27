@@ -1,6 +1,7 @@
 {
-  "sketch": "tower-clock/tower-clock.ino",
+  "sketch": "tower-clock-with-inductive-proximity-sensor/tower-clock-with-inductive-proximity-sensor.ino",
   "output": "build",
   "board": "arduino:avr:uno",
-  "port": "/dev/tty.usbmodem2101"
+  "port": "/dev/tty.usbmodem101",
+  "programmer": "arduinoasisp"
 }

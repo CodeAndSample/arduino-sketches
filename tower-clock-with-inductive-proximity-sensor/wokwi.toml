@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware='../build/tower-clock-with-inductive-proximity-sensor.ino.hex'
+elf='../build/tower-clock-with-inductive-proximity-sensor.ino.elf'

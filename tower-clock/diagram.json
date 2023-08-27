@@ -6,22 +6,22 @@
     {
       "type": "wokwi-arduino-uno",
       "id": "uno",
-      "top": -143.71,
-      "left": -340.62,
+      "top": -111.14,
+      "left": -262.73,
       "attrs": {}
     },
     {
       "type": "wokwi-ds1307",
       "id": "ds1307",
-      "top": 368.05,
-      "left": 217.2,
+      "top": 271.65,
+      "left": -17.29,
       "attrs": {}
     },
     {
       "type": "wokwi-hc-sr04",
       "id": "ultrasonic1",
-      "top": 126.13,
-      "left": -47.09,
+      "top": 130.38,
+      "left": -409.64,
       "attrs": { "distance": "199" }
     },
     {
@@ -35,9 +35,23 @@
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": -299.57,
-      "left": -100.18,
+      "top": -349.14,
+      "left": -12.38,
       "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -2.38,
+      "left": 414.76,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -456.6,
+      "left": 68.66,
+      "attrs": {}
     }
   ],
   "connections": [
@@ -47,11 +61,23 @@
     ["uno:A5", "ds1307:SCL", "orange", ["v20", "*", "h-30"]],
     ["uno:5V", "ultrasonic1:VCC", "red", ["v165.67", "h-136.37"]],
     ["r1:1", "led1:A", "blue", []],
-    ["uno:13", "r1:2", "blue", ["v0"]],
-    ["led1:C", "uno:GND.1", "black", ["h-138.87", "v122.86"]],
+    ["led1:C", "uno:GND.1", "black", ["h-156.87", "v205"]],
     ["uno:2", "ultrasonic1:ECHO", "green", ["v0"]],
     ["ultrasonic1:GND", "uno:GND.3", "black", ["v32.64", "h163.79"]],
-    ["uno:3", "ultrasonic1:TRIG", "violet", ["v0"]]
+    ["uno:3", "ultrasonic1:TRIG", "violet", ["v0"]],
+    ["r1:2", "uno:13", "green", ["h0"]],
+    ["uno:GND.1", "lcd:VSS", "black", ["v-51", "*", "h0", "v18"]],
+    ["uno:GND.1", "lcd:K", "black", ["v-51", "*", "h0", "v18"]],
+    ["uno:GND.1", "lcd:RW", "black", ["v-51", "*", "h0", "v18"]],
+    ["uno:5V", "lcd:VDD", "red", ["v16", "h-16"]],
+    ["uno:5V", "r2:2", "red", ["v16", "h464.53", "v-244", "h111.76"]],
+    ["r2:1", "lcd:A", "pink", []],
+    ["uno:12", "lcd:RS", "blue", ["v-16", "*", "h0", "v20"]],
+    ["uno:11", "lcd:E", "purple", ["v-20", "*", "h0", "v20"]],
+    ["uno:10", "lcd:D4", "green", ["v-24", "*", "h0", "v20"]],
+    ["uno:9", "lcd:D5", "brown", ["v-28", "*", "h0", "v20"]],
+    ["uno:8", "lcd:D6", "gold", ["v-32", "*", "h0", "v20"]],
+    ["uno:7", "lcd:D7", "gray", ["v-36", "*", "h0", "v20"]]
   ],
   "dependencies": {}
 }
